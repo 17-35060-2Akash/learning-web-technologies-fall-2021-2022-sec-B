@@ -30,14 +30,14 @@
 <employee sr="03">
 	<id>3</id>
 	<name>Ala Voski</name>
-	<address>H# 38, R#3, Motijheel</address>
-	<depertment>
+	<address>
 		<flatNo></flatNo>
 		<houseNo>38</houseNo>
 		<roadNo>3</roadNo>
 		<area>Motijheel</area>
 		<districtName></districtName>
-	</depertment>
+	</address>
+	<depertment>Human Resource </depertment>
 	<salary>$12000</salary>
 </employee>
 </employees>
