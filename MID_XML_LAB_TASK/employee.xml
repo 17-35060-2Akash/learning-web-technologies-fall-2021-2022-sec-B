@@ -1,25 +1,43 @@
 <employees>
 <employee sr="01">
-	<ID>1</ID>
-	<NAME>John Doe</NAME>
-	<ADDRESS>H# 38, R#3, Banani, Dhaka</ADDRESS>
-	<DEPERTMENT>H# 38, R#3, Motijheel</DEPERTMENT>
-	<SALARY>$20000</SALARY>
+	<id>1</id>
+	<name>John Doe</name>
+	<address>
+		<flatNo></flatNo>
+		<houseNo>38</houseNo>
+		<roadNo>3</roadNo>
+		<area>Banani</area>
+		<districtName>Dhaka</districtName>
+	</address>
+	<depertment>Sales</depertment>
+	<salary>$20000</salary>
 </employee>
 
 <employee sr="02">
-	<ID>2</ID>
-	<NAME>Mark Zuckerberg</NAME>
-	<ADDRESS>Flat# A/1, H# 20, R#18, Mirpur, Dhaka</ADDRESS>
-	<DEPERTMENT>Accounts</DEPERTMENT>
-	<SALARY>$12000</SALARY>
+	<id>2</id>
+	<name>Mark Zuckerberg</name>
+	<address>
+        <flatNo>A/1</flatNo>
+		<houseNo>20</houseNo>
+		<roadNo>18</roadNo>
+		<area>Mirpur</area>
+		<districtName>Dhaka</districtName>
+	</address>
+	<depertment>Accounts</depertment>
+	<salary>$12000</salary>
 </employee>
 
 <employee sr="03">
-	<ID>3</ID>
-	<NAME>Ala Voski</NAME>
-	<ADDRESS>H# 38, R#3, Motijheel</ADDRESS>
-	<DEPERTMENT>Human Resource</DEPERTMENT>
-	<SALARY>$12000</SALARY>
+	<id>3</id>
+	<name>Ala Voski</name>
+	<address>H# 38, R#3, Motijheel</address>
+	<depertment>
+		<flatNo></flatNo>
+		<houseNo>38</houseNo>
+		<roadNo>3</roadNo>
+		<area>Motijheel</area>
+		<districtName></districtName>
+	</depertment>
+	<salary>$12000</salary>
 </employee>
 </employees>
