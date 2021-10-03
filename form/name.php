@@ -1,19 +1,21 @@
 <?php
 
-if(isset($_REQUEST['submit'])){
+	if(isset($_REQUEST['submit'])){
+		$name = $_REQUEST['myname'];
 
+		 if (emptyempty($_POST["name"])) {  
+         $nameErr = "Enter Name";  
+    } 
 
-
-$name= $_REQUEST['myname'];
-if($name=="")
-{
-	echo "Null";
-}
-else
-{
-	echo "Your name is ". $name ;
-} 
-}
+    else {  
+        $name = input_data($_POST["name"]);  
+              
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {  
+                $nameErr = "Give Only alphabets and white space";  
+            }  
+			echo "Your name is: ". $name;
+		}	
+	}
 ?>
 
 <html>
