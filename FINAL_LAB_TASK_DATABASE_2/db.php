@@ -3,7 +3,7 @@
  $host="localhost";
  $dbuser="root";
  $dbpassword="";
- $dbname="product_db";
+ $dbname="productdb";
 
  function getConnection()
  {

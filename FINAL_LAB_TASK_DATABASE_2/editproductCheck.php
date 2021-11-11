@@ -2,11 +2,13 @@
 
      require_once('productModel.php');
      /*echo "<pre>";
-     print_r($_REQUEST);
-*/
+     print_r($_REQUEST);*/
+
+    
   
   if(isset($_REQUEST['save']))
   {
+  	$id=$_GET['id'];
     $name=$_REQUEST['name'];
     $buyingprice=$_REQUEST['buyingprice'];
     $sellingprice=$_REQUEST['sellingprice'];
@@ -27,15 +29,14 @@
 			      {
 			      	if($sellingprice!="")
 					      {
-					      	$product=['name'=>$name,'buyingprice'=>$buyingprice,'sellingprice'=>$sellingprice,'displayable'=>$displayable];
+					      	$product=['id'=>$id,'name'=>$name,'buyingprice'=>$buyingprice,'sellingprice'=>$sellingprice,'displayable'=>$displayable];
 
-                 echo "<pre>";
-                 print_r($product);
+                
 
 
-					      	$status=createProduct($product);
+					      	$status=editProduct($id,$product);
 
-					      	//echo $status;
+					      	echo $status;
 
 									if($status)
 									{

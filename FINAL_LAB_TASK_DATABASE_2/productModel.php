@@ -24,12 +24,12 @@
             mysqli_close($con);
   }
 
-  function getAllUsers()
+  function getAllProducts()
   {
       $con=getConnection();
 
-      $sql="select * from users";
-      $result=mysqli_query($con,$sql);////for taking just all the data not the array
+      $sql="select * from products";
+      $result=mysqli_query($con,$sql);
       $datalist=[];
       while($data=mysqli_fetch_assoc($result))
       {
@@ -43,21 +43,41 @@
 
   }
 
-  function getUserById($id)
+  function getProductById($id)
   {
       $con=getConnection();
 
-      $sql="select * from users where id='{$id}'";
+      $sql="select * from products where id='{$id}'";
       $result=mysqli_query($con,$sql);
      
-      $user=mysqli_fetch_assoc($result);
+      $product=mysqli_fetch_assoc($result);
       
-      return $user;
+      return $product;
       
 
   }
 
-   function createProducr($product)
+    function getProductByName($name)
+  {
+      $con=getConnection();
+
+      $sql="select * from products where name='{$name}'";
+      $result=mysqli_query($con,$sql);
+      $datalist=[];
+      while($data=mysqli_fetch_assoc($result))
+      {
+        array_push($datalist, $data);
+      }
+      //echo "<pre>";
+      //print_r($datalist);
+      
+      return $datalist;
+      
+      
+
+  }
+
+   function createProduct($product)
   {
       $con=getConnection();
 
@@ -79,12 +99,19 @@
   }
 
   
-  function editUser($id)
+  function editProduct($id,$nproduct)
   {
       $con=getConnection();
-      $user=getUserById($id);
+      $product=getProductById($id);
 
-      $sql="update users set username='{$user['username']}',password='{$user['password']}',email='{$user['email']}',type='{$user['type']}'";
+      //$product['id']=$nproduct['id'];
+      $product['name']=$nproduct['name'];
+      $product['buyingprice']=$nproduct['buyingprice'];
+      $product['sellingprice']=$nproduct['sellingprice'];
+      $product['displayable']=$nproduct['displayable'];
+
+
+      $sql="update products set name='{$product['name']}',buyingprice='{$product['buyingprice']}',sellingprice='{$product['sellingprice']}',displayable='{$product['displayable']}' where id='{$id}'";
       if(mysqli_query($con,$sql))
       {
         return true;
@@ -97,11 +124,11 @@
 
   }
 
-  function deleteUser($id)
+  function deleteProduct($id)
   {
       $con=getConnection();
 
-      $sql="delete from users where id='{$id}'";
+      $sql="delete from products where id='{$id}'";
       if(mysqli_query($con,$sql))
       {
         return true;

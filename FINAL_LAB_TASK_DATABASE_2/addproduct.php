@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 	<title>Add Product</title>
@@ -5,7 +7,8 @@
 <body>
     
     <br>
-    <form method="post" action="addproductCheck.php">
+   <form method="post" action="addproductCheck.php"> 
+       
     	<fieldset>
     		<legend>Add Product</legend>
     		<table >
@@ -27,7 +30,7 @@
                 </tr>
                 <tr>
                     
-                    <td><input type="checkbox" name="display" value="display">Display</td>
+                    <td><input type="checkbox" name="display" value="YES">Display</td>
                 </tr>
                 <td>
                 ______________________________________</td>
@@ -36,7 +39,7 @@
 
 
     			<tr>
-    				<td><input type="submit" name="submit" value="Save"></td>
+    				<td><input type="submit" name="save" value="Save"></td>
     			</tr>
     		</table>
     	</fieldset>
