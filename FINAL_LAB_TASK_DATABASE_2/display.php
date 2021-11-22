@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once('productModel.php');
+      require_once('productModel.php');
 
     
       $datalist= getAllProducts();
