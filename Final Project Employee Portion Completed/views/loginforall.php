@@ -35,7 +35,7 @@
 						<td><a href=""><img src="../assets/signup.png" width="180px" height="180px" style="float: center" /></a><br><br></td>
 					</tr>
 					<tr>
-						<td colspan="6"><img src="../assets/titles.png" width="500px" height="100px" style="float: center" /></td>
+						<td colspan="6"><img src="../assets/titles.png" width="540px" height="150px" style="float: center" /></td>
 					</tr>
 
 				</table>
