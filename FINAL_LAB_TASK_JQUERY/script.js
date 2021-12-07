@@ -99,42 +99,145 @@
 
         $('#name').keyup(function(){
 
-            let element=$('#name').val();
-            
-          alert(element);
-           let elementarr=stringConv(element);
-           for(let i=0;i<elementarr.length;i++)
-           {
-             const pattern=/[a-zA-z]/;
-             if(isNaN(elementarr[i]) || elementarr[i]==" ")
-             {
-                if(pattern.test(elementarr[i]) || elementarr[i]=="_" || elementarr[i]=="."|| elementarr[i]==" " )
-                {
-                   $('#name').val()=element;
-                   alert(element);
+                 let element=$('#name').val();
+                 //alert(element);
+                 
+                 if(element!="")
+                 {
+                       let elementarr=stringConv(element);
+                       //console.log(elementarr);
+                       for(let i=0;i<elementarr.length;i++)
+                       {
 
-                }
-                else
-                {
-                   alert("Special Charecter is Not Allowed except  '_'  and  '.' ");
-                   $('#name').val('');
-                   break;
-                }
-                
-             }
-             else
-             {
-                alert("Numbers Not Allowed!");
-                $('#name').val('');
-                break;
-             }
-           }
+                          if(elementarr[0]!=" ")
+                            {
+                                  
+                                  if(isNaN(elementarr[i]) || elementarr[i]==" ")
+                                   {
+                                          if(isAlphabet(elementarr[i]) || elementarr[i]=="_" || elementarr[i]=="."|| elementarr[i]==" " )
+                                          {
+                                             $('#name').val(element);
+                                             //alert("Name is Okay.");
+                                          }
+                                          else
+                                          {
+                                             alert("Special Charecter is Not Allowed except  '_'  and  '.' ");
+                                             let str=$('#name').val();
+                                             $('#name').val(str.replace(elementarr[i],""));
+                                             break;
+                                          }
+                                      
+                                   }
+                                   else
+                                   {
+                                      alert("Numbers Not Allowed!");
+                                      
+                                      let str=$('#name').val();
+                                      $('#name').val(str.replace(elementarr[i],""));
+                                         
+                                      break;
+                                   }
+                            }
+                            else
+                            {
+                                  alert("You can't use space for the first character of this field.");
+                                  
+                                  let str=$('#name').val();
+                                      $('#name').val(str.replace(elementarr[i],""));
+                                         
+                                      break;
+                            }
+
+                       
+                               
+                     }
+                 }
+                 else
+                 {
+                      alert("Name can't be empty ! ");
+                      
+                 }
+                 
+
 
 
 
 
 
         } )
+
+        $('#email').keyup(function(){
+
+         function emailCheck()
+         {
+            let element=$('#email').val();
+            if(element!="")
+            {
+               if(element.match('_')||element.match('.'))
+               {
+                       
+                       emailcharCheck();
+                       if(element.match('@'))
+                       {
+                          let i;
+                          for(i=0;i<element.length;i++)
+                          {
+                             if(element.charAt(i)== '@' )
+                             {
+                                break;
+                             }
+                          }
+                           
+                           let atidx=i+1;
+                           if(i>0)
+                           {
+                             
+                                  if(element.match('@gmail.com')||element.match('@outlook.com')||element.match('@bankx.org'))
+                                   {
+                                      
+                                      $('#emailmsg').html("Email is Okay");
+                                      
+                                        
+                                   }
+                                   else
+                                   {
+                                     $('#emailmsg').html("Domain names: '@gmail.com' , '@outlook.com' and  '@bankx.org' are Allowed");
+                                   }
+
+                           }
+                           else
+                           {
+                            $('#emailmsg').html("Nothing before @" );
+                           }
+                           
+                           
+
+                          
+
+                       }
+                       else
+                       {
+                         $('#emailmsg').html(" @ is missing. ");
+                       }
+               }
+               else
+               {
+                $('#emailmsg').html(" Special Charecter is Not Allowed except  ' _ '  and  ' . '  ");
+               }
+            }
+            else
+            {
+               $('#emailmsg').html(" Email can't be empty. ");
+            }
+
+         }
+
+
+
+
+
+
+        })
 
 
         function isAlphabet(char)
@@ -165,4 +268,23 @@
             {
                 return false;
             }
+        }
+
+
+        function wordCount(string)
+        {
+            let totalwords=0;
+            let wordsarr=string.split(" ");
+            totalwords=wordsarr.length;
+            //console.log(totalwords);
+            return totalwords;
+
+
+        }
+
+
+
+        function stringConv(string)
+        {
+            return [...string];
         }

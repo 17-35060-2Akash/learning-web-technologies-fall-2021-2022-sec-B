@@ -24,6 +24,7 @@
 			<td align="center">Email</td>
 			<td align="center">
 				<input type="text" id="email" name="email" value="" placeholder="hint:sample@example.com"> <br>
+				<h4 id="emailmsg"></h4>
 			</td>
 			<td></td>
 		</tr>
