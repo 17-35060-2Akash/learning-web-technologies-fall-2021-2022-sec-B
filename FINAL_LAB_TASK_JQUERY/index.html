@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Example</title>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+	
+</head>
+<body>
+    <h1 id="head1">JS Example</h1>
+    <h1 id="head2">CSS Example</h1>
+    <input type="text" id="name" name="name" value="" onkeyup="f2()"> <br> <br> <br>
+    <center><input type="button" name="submit" value="Up" onclick="moveup()"><br>
+    <input type="button" id="mleft" name="submit" value="Left" >
+    <input type="button" id="mright" name="submit" value="Right" ><br>
+    <input type="button" name="submit" value="Down" onclick="movedown()"></center>
+    
+
+
+    <div id="box" style="height: 100px;
+                          width: 100px;
+                          background: green;
+                          position: absolute;
+                          left: 10px;
+                          bottom: 150px;">
+
+
+
+    	
+    </div>
+
+
+
+    <!-- <script type="text/javascript">
+
+    	//alert("test");
+    	console.log("this is another test!");
+    	//document.write("this is a test...");
+    	//let element=document.getElementsByTagName('h1')[1];
+        //let element = document.getElementById('head1');
+        //let element=document.getElementByClassName('');
+        //element.innerHTML="Akash";
+
+        function f1()
+        {
+        	let element = document.getElementById('head1');
+        	element.innerHTML="Akash";
+        }
+
+        function f2()
+        {
+           let element=document.getElementById("name");
+           //alert(element.value);
+           document.getElementById('head1').innerHTML=element.value;
+           //document.getElementById("name").value="";
+
+
+        }
+
+        function validate()
+        {
+        	let name=document.getElementById('name').value;
+        	if(name =="")
+        	{
+        		document.getElementById('head1').innerHTML="Null Data";
+        	}
+        	else
+        	{
+        		document.getElementById('head1').innerHTML="good To go!";
+        	}
+        }
+    </script> -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
