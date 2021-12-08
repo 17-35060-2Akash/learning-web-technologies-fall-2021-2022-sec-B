@@ -58,6 +58,28 @@
 
   }
 
+  function validatePass($id, $pass)
+  {
+
+      $con=getConnection();
+
+      $sql="select * from userlist where id='{$id}'";
+      $result=mysqli_query($con,$sql);
+     
+      $user=mysqli_fetch_assoc($result);
+      if($user['password']==$pass)
+      {
+        return true;
+      }
+      
+      else
+      {
+        return false;
+      }
+      
+
+  }
+
   
 
 
@@ -90,6 +112,24 @@
       //echo $user['education'];
 
       $sql="update userlist set username='{$user['username']}',gender='{$user['gender']}',bg='{$user['bg']}',dob='{$user['dob']}',address='{$user['address']}',email='{$user['email']}',education='{$user['education']}',designation='{$user['designation']}',picture='{$user['picture']}' where id='{$user['userid']}'";
+      if(mysqli_query($con,$sql))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+      
+
+  }
+
+  function updatePass($id,$password)
+  {
+      $con=getConnection();
+      
+
+      $sql="update userlist set password='{$password}' where id='{$id}'";
       if(mysqli_query($con,$sql))
       {
         return true;

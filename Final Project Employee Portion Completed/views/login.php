@@ -1,11 +1,18 @@
 <?php 
    session_start();
 
+   
    if(isset($_SESSION['invalidlog']))
    {
     $invalidlog=$_SESSION['invalidlog'];
     //echo $invalidlog;
    }
+   else
+   {
+      $_SESSION['invalidlog']=0;
+      $invalidlog=$_SESSION['invalidlog'];
+   }
+
 
 ?>
 <html>
@@ -85,9 +92,9 @@
 
         "use strict"
 
-        if(<?=$invalidlog ?>)
+        if(<?=$invalidlog ?>==1)
         {
-            <?php $_SESSION['invalidlog']=false; ?>
+            <?php $_SESSION['invalidlog']=0; ?>
             alert("Wrong Id, Employee Name, or Password...!");
         }
 

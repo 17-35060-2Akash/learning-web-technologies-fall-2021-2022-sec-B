@@ -81,6 +81,9 @@
                         <tr height="50px" >
                               <td width="200px" align="center"><a href="updateprofile.php" >Update Profile</td>
                         </tr>
+                        <tr height="50px" >
+                              <td width="200px" align="center"><a href="changepass.php" >Change Password</td>
+                        </tr>
                         
                   </table>
                   <br>

@@ -63,7 +63,7 @@ if(isset($_REQUEST['submit']))
                         }
                         else
                         { 
-                           $_SESSION['invalidlog']=true;
+                           $_SESSION['invalidlog']=1;
                            header('location: ../views/login.php');
                         }
 
