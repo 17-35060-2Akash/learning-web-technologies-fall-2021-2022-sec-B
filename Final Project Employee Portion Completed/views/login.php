@@ -75,7 +75,7 @@
                 </fieldset>
 
             <br><br><img src="../assets/foremp.png" width="200px" height="100px" style="float: left;" />
-            <a href="signup.php" align="right">Signup</a>
+            <!-- <a href="signup.php" align="right">Signup</a> -->
             </td>
 
             

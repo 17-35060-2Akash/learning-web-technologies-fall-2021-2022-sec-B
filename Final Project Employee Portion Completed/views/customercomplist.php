@@ -13,7 +13,7 @@
       $datalist= getAllComplaints();
 
 
-      $_SESSION['reply']==0;
+      $_SESSION['reply']=0;
 ?>
 
 <html>
